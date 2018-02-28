@@ -121,6 +121,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\HttpHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +132,10 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ProjectMatoLite_CrossPlatform\ProjectMato.Model\ProjectMato.Model.csproj">
+      <Project>{44ADD307-4F94-40CA-8B3D-E68DACFAD633}</Project>
+      <Name>ProjectMato.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectMato_OnlineMusic\OnlineMusic.csproj">
       <Project>{E4E058DB-138B-40D7-A4B4-840C61B5FDE4}</Project>
       <Name>OnlineMusic</Name>
