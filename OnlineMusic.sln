@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMusic.iOS", "OnlineMu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineMusic.Android", "OnlineMusic\ProjectMato_OnlineMusic.Android\OnlineMusic.Android.csproj", "{D1F596C1-EA78-43CD-AEE0-A4ACBABFD8A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMato.Model", "..\ProjectMatoLite_CrossPlatform\ProjectMato.Model\ProjectMato.Model.csproj", "{44ADD307-4F94-40CA-8B3D-E68DACFAD633}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMato.Model", "..\ProjectMato.Model\ProjectMato.Model\ProjectMato.Model.csproj", "{44ADD307-4F94-40CA-8B3D-E68DACFAD633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

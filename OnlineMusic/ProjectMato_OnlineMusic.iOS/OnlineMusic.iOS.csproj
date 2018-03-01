@@ -111,6 +111,10 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ProjectMato.Model\ProjectMato.Model\ProjectMato.Model.csproj">
+      <Project>{44add307-4f94-40ca-8b3d-e68dacfad633}</Project>
+      <Name>ProjectMato.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectMato_OnlineMusic\OnlineMusic.csproj">
       <Project>{E4E058DB-138B-40D7-A4B4-840C61B5FDE4}</Project>
       <Name>OnlineMusic</Name>

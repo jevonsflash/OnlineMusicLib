@@ -68,8 +68,8 @@
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ProjectMatoLite_CrossPlatform\ProjectMato.Model\ProjectMato.Model.csproj">
-      <Project>{44ADD307-4F94-40CA-8B3D-E68DACFAD633}</Project>
+    <ProjectReference Include="..\..\..\ProjectMato.Model\ProjectMato.Model\ProjectMato.Model.csproj">
+      <Project>{44add307-4f94-40ca-8b3d-e68dacfad633}</Project>
       <Name>ProjectMato.Model</Name>
     </ProjectReference>
   </ItemGroup>
