@@ -6,6 +6,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using OnlineMusic.iOS.Helper;
+using ProjectMato.Model.Interface;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(HttpHelper))]
@@ -13,9 +14,9 @@ using Xamarin.Forms;
 
 namespace OnlineMusic.iOS.Helper
 {
-    public class HttpHelper
+    public class HttpHelper : IHttpHelper
     {
-        public static async Task<string> GetWebAsync(string url, Encoding e = null)
+        public async Task<string> GetWebAsync(string url, Encoding e = null)
         {
             try
             {
@@ -31,7 +32,7 @@ namespace OnlineMusic.iOS.Helper
             }
             catch { return ""; }
         }
-        public static string PostWeb(string url, string data)
+        public string PostWeb(string url, string data)
         {
             try
             {
@@ -43,7 +44,7 @@ namespace OnlineMusic.iOS.Helper
             }
             catch { return ""; }
         }
-        public static async Task HttpDownloadFileAsync(string url, string path)
+        public async Task HttpDownloadFileAsync(string url, string path)
         {
             HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             HttpWebResponse response = await request.GetResponseAsync() as HttpWebResponse;
@@ -59,7 +60,7 @@ namespace OnlineMusic.iOS.Helper
             stream.Close();
             responseStream.Close();
         }
-        public static void SetHeaderValue(WebHeaderCollection header, string name, string value)
+        public void SetHeaderValue(WebHeaderCollection header, string name, string value)
         {
             var property = typeof(WebHeaderCollection).GetProperty("InnerCollection",
                 System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
@@ -69,7 +70,7 @@ namespace OnlineMusic.iOS.Helper
                 collection[name] = value;
             }
         }
-        public static async System.Threading.Tasks.Task<string> GetWebDatacAsync(string url, Encoding c)
+        public async System.Threading.Tasks.Task<string> GetWebDatacAsync(string url, Encoding c)
         {
             HttpWebRequest hwr = (HttpWebRequest)WebRequest.Create(url);
             hwr.Timeout = 20000;
@@ -88,7 +89,7 @@ namespace OnlineMusic.iOS.Helper
             sr.Dispose();
             return st;
         }
-        public static async System.Threading.Tasks.Task<string> GetWebDatadAsync(string url, Encoding c)
+        public async System.Threading.Tasks.Task<string> GetWebDatadAsync(string url, Encoding c)
         {
             HttpWebRequest hwr = (HttpWebRequest)WebRequest.Create(url);
             hwr.Timeout = 20000;
@@ -107,7 +108,7 @@ namespace OnlineMusic.iOS.Helper
             sr.Dispose();
             return st;
         }
-        public static Boolean IsNetworkTrue()
+        public Boolean IsNetworkTrue()
         {
             try
             {
