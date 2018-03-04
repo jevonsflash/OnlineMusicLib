@@ -55,11 +55,11 @@ namespace OnlineMusic.Server
             }
             else return null;
         }
-        public async Task<Billboard> GetGDAsync(string id = "2591355982")
+        public async Task<BillboardInfo> GetGDAsync(string id = "2591355982")
         {
             var s = await HttpHelper.GetWebDatacAsync($"https://c.y.qq.com/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg?type=1&json=1&utf8=1&onlysong=0&disstid={id}&format=json&g_tk=1157737156&loginUin=2728578956&hostUin=0&format=json&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0", Encoding.UTF8);
             JObject o = JObject.Parse(s);
-            var dt = new Billboard();
+            var dt = new BillboardInfo();
             dt.Title = o["cdlist"][0]["dissname"].ToString();
             dt.AlbumArtPath = o["cdlist"][0]["logo"].ToString();
             dt.OnlineId = id;
@@ -395,11 +395,11 @@ namespace OnlineMusic.Server
                 return m;
             }
         }
-        public async Task<Billboard> GetGDbyWYAsync(string id)
+        public async Task<BillboardInfo> GetGDbyWYAsync(string id)
         {
             string data = HttpHelper.PostWeb("http://lab.mkblog.cn/music/api.php", "types=playlist&id=" + id);
             JObject o = JObject.Parse(data);
-            var dt = new Billboard();
+            var dt = new BillboardInfo();
             dt.Title = o["playlist"]["name"].ToString();
             dt.OnlineId = o["playlist"]["id"].ToString();
             dt.AlbumArtPath = o["playlist"]["coverImgUrl"].ToString();
